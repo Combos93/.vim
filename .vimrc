@@ -44,22 +44,49 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+
+let g:syntastic_scss_sass_args="--load-path ~/.rvm/gems/ruby-2.5.5/gems/bootstrap-generators-3.3.4/vendor/twitter/bootstrap/sass"
+
+let g:syntastic_scss_sass_quiet_messages = {
+    \ "regex": 'File to import not found or unreadable', }
 
 let g:ctrlp_map = '<c-f>'
+let g:ctrlp_custom_ignore = {
+  \ 'dir': 'node_modules\|deps\|_build'
+  \ }
 
+let g:jsx_ext_required = 1
 
 call plug#begin()
 
+" Ruby/Rails
 Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+" Customising
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-rails'
 Plug 'dracula/vim', { 'as': 'dracula' }
+" Git
 Plug 'airblade/vim-gitgutter'
+" Snippets
+Plug 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+" Emmet
 Plug 'mattn/emmet-vim'
+" CSS
 Plug 'alexlafroscia/postcss-syntax.vim'
+" Ergonomics
 Plug 'kien/ctrlp.vim'
 Plug 'vim-syntastic/syntastic'
+" JS, TS, JSX, CoffeeScript
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'leafgarland/typescript-vim'
+Plug 'kchmck/vim-coffee-script'
 
 call plug#end()
 
