@@ -30,7 +30,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -44,20 +43,13 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = 'npm run lint --'
-
-let g:syntastic_scss_sass_args="--load-path ~/.rvm/gems/ruby-2.5.5/gems/bootstrap-generators-3.3.4/vendor/twitter/bootstrap/sass"
-
-let g:syntastic_scss_sass_quiet_messages = {
-    \ "regex": 'File to import not found or unreadable', }
 
 let g:ctrlp_map = '<c-f>'
 let g:ctrlp_custom_ignore = {
   \ 'dir': 'node_modules\|deps\|_build'
   \ }
 
-let g:jsx_ext_required = 1
+let g:jsx_ext_required = 0
 
 call plug#begin()
 
@@ -82,11 +74,16 @@ Plug 'alexlafroscia/postcss-syntax.vim'
 " Ergonomics
 Plug 'kien/ctrlp.vim'
 Plug 'vim-syntastic/syntastic'
-" JS, TS, JSX, CoffeeScript
+Plug 'mileszs/ack.vim'
+" JS, TS, JSX, CoffeeScript, React
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
 Plug 'kchmck/vim-coffee-script'
+"Plug 'epilande/vim-react-snippets'
+" Ultisnips
+"Plug 'SirVer/ultisnips'
 
 call plug#end()
 
