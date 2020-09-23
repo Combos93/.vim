@@ -24,6 +24,8 @@ set statusline+=%*
 filetype on
 color dracula
 
+nnoremap <Leader>gt :A<CR>
+
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
   \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -44,10 +46,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_ruby_checkers = ['rubocop']
 
-let g:ctrlp_map = '<c-f>'
-let g:ctrlp_custom_ignore = {
-  \ 'dir': 'node_modules\|deps\|_build'
-  \ }
+let g:fzf_tags_command = 'ctags -R'
+map <C-f> :Files<CR>
 
 let g:jsx_ext_required = 0
 
@@ -72,9 +72,13 @@ Plug 'mattn/emmet-vim'
 " CSS
 Plug 'alexlafroscia/postcss-syntax.vim'
 " Ergonomics
-Plug 'kien/ctrlp.vim'
+" Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'mileszs/ack.vim'
+Plug 'mechatroner/rainbow_csv'
+Plug 'tpope/vim-projectionist'
 " JS, TS, JSX, CoffeeScript, React
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'

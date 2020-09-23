@@ -1,3 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/combos/Dropbox/RailsWay/RoR/rorfirst/askme/app/assets'
+let g:netrw_dirhist_2='/home/combos/work/rgsb-product/rgsb-shared-reference-books'
+let g:netrw_dirhist_3='/home/combos/work/irs_tkb/db/migrate'
+let g:netrw_dirhist_4='/home/combos/work/inbox-ab/.ci'
+let g:netrw_dirhist_5='/home/combos/work/inbox-ab/.ci/.ci'
+let g:netrw_dirhist_6='/home/combos/work/inbox-ab/.ci'
